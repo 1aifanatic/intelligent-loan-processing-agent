@@ -1,0 +1,17 @@
+[project]
+name = "intelligent-loan-processing-agent"
+version = "0.1.0"
+description = "Minimal deterministic UiPath coded-agent starter for loan-processing scenarios"
+authors = [{ name = "UiPath Solutions Team" }]
+dependencies = [
+    "uipath-langchain>=0.14.9,<0.15.0",
+]
+requires-python = ">=3.11,<3.14"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.15.21",
+    "uipath-dev>=0.0.84",
+]

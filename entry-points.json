@@ -1,0 +1,74 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "152e9dff-e65d-4cf5-8d86-91bbb9466690",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "default": "Hello",
+                        "description": "A message for the loan processing agent.",
+                        "minLength": 1,
+                        "title": "Message",
+                        "type": "string"
+                    }
+                },
+                "required": []
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "description": "The agent's deterministic response.",
+                        "title": "Response",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "response"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "respond",
+                        "name": "respond",
+                        "type": "node",
+                        "subgraph": null,
+                        "metadata": {}
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null,
+                        "metadata": {}
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "respond",
+                        "label": null
+                    },
+                    {
+                        "source": "respond",
+                        "target": "__end__",
+                        "label": null
+                    }
+                ]
+            }
+        }
+    ]
+}

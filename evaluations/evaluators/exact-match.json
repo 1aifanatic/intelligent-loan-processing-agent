@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "id": "ExactMatchEvaluator",
+  "evaluatorTypeId": "uipath-exact-match",
+  "description": "Verifies the deterministic coded-agent response exactly.",
+  "evaluatorConfig": {
+    "name": "ExactMatchEvaluator",
+    "targetOutputKey": "*",
+    "ignoreCase": false,
+    "negated": false,
+    "defaultEvaluationCriteria": {
+      "expectedOutput": {
+        "response": ""
+      }
+    }
+  }
+}

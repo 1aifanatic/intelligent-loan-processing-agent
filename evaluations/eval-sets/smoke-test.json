@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "id": "smoke-test",
+  "name": "Minimal Agent Smoke Test",
+  "description": "Checks that the UiPath coded agent returns its deterministic output.",
+  "evaluatorRefs": [
+    "ExactMatchEvaluator"
+  ],
+  "evaluations": [
+    {
+      "id": "test-1-loan-status",
+      "name": "Loan status message",
+      "inputs": {
+        "message": "Check loan application LA-1001"
+      },
+      "evaluationCriterias": {
+        "ExactMatchEvaluator": {
+          "expectedOutput": {
+            "response": "Intelligent Loan Processing Agent is ready. Received message: Check loan application LA-1001"
+          }
+        }
+      }
+    },
+    {
+      "id": "test-2-greeting",
+      "name": "Greeting message",
+      "inputs": {
+        "message": "Hello"
+      },
+      "evaluationCriterias": {
+        "ExactMatchEvaluator": {
+          "expectedOutput": {
+            "response": "Intelligent Loan Processing Agent is ready. Received message: Hello"
+          }
+        }
+      }
+    }
+  ]
+}

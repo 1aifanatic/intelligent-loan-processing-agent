@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "intelligent-loan-processing-agent",
+  "Description": "Minimal deterministic UiPath coded-agent starter for loan-processing scenarios",
+  "MainFile": null
+}

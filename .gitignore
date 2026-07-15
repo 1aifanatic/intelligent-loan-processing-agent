@@ -1,0 +1,32 @@
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# UiPath local runtime state
+__uipath/
+.uipath/telemetry.json
+
+# UiPath-generated local coding-assistant references
+.agent/
+AGENTS.md
+CLAUDE.md
+
+# Generated local results
+run-output.json
+eval-results.json
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
