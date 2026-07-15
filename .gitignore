@@ -23,6 +23,7 @@ CLAUDE.md
 # Generated local results
 run-output.json
 eval-results.json
+*.nupkg
 *.log
 
 # Editor and operating-system files

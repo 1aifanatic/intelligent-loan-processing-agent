@@ -199,6 +199,37 @@ uip login --organization "<ORGANIZATION>" --tenant "<TENANT>"
 
 Do not commit `.env`, access tokens, credentials, or local runtime state. The included `.gitignore` excludes those files.
 
+## Deploy and invoke in UiPath
+
+Publish the package to your personal workspace:
+
+```powershell
+uip codedagent deploy --my-workspace
+```
+
+The deployment command validates the project, creates the NuGet package, publishes it, and creates or updates the personal-workspace process.
+
+Invoke the published `agent` entry point with the included payload:
+
+```powershell
+uip codedagent invoke agent --file examples\sample-input.json
+```
+
+Using `--file` is recommended on PowerShell because it avoids inline JSON quoting problems. Invocation is asynchronous and returns a job-monitoring URL.
+
+Use the job key from that URL to inspect the terminal state, output, logs, history, and traces:
+
+```powershell
+uip or jobs get "<JOB_KEY>" --output json
+uip or jobs logs "<JOB_KEY>" --output json
+uip or jobs history "<JOB_KEY>" --output json
+uip or jobs traces "<JOB_KEY>" --output json
+```
+
+The initial end-to-end cloud test published version `0.1.0` to a personal workspace, ran it with UiPath Serverless Python, reached the `Successful` state, returned the expected response, and recorded both the overall LangGraph trace and the `respond` node trace.
+
+The current `uipath-langchain` dependency may emit a non-blocking deprecation `FutureWarning` for an internal legacy import. This warning did not affect job state, output, or trace collection in the verified run.
+
 ## UiPath resource bindings
 
 `bindings.json` currently contains:
@@ -278,6 +309,8 @@ The initial version was verified with:
 - Successful local UiPath coded-agent execution.
 - Two exact-match smoke evaluations, both scoring `1.0`.
 - JSON validation for generated schemas, bindings, and evaluation configuration.
+- Successful publication of version `0.1.0` to a UiPath personal workspace.
+- Successful end-to-end UiPath Serverless invocation with the expected output and captured traces.
 
 ## Contributing
 
